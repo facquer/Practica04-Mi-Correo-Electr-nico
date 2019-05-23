@@ -2,46 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="  ">
+    <link rel="stylesheet" href="css/stylesLogin.css">
+    <link rel="stylesheet" href="css/stylesGeneral.css">
     <script type="text/javascript" src="../controladores/js/validar.js"> </script>
     
 </head>
-<body>
-    <form method="post" action="../controladores/registro.php" class="login" onsubmit="validarCamposObligatorios()" enctype="multipart/form-data">
-        <h1>Registrate</h1>
-        <div class="textbox" id="cajaC">
-            <i class="icon-user"></i>
-            <input type="email" placeholder="correo" name="correo" id="correo" value="@ups.edu.ec">
+<body class="align">
+    <form method="post" action="../controladores/registro.php" class="form login" onsubmit="validarCamposObligatorios()" enctype="multipart/form-data">
+        <header class="login_cabezera">
+            <h3 class="login_titulo">Registrate</h3>
+          </header>
+
+        <div class="login_centro">
+            <div class="form__field">
+                <input type="email" placeholder="correo" name="user" id="correo" value="@ups.edu.ec">
+            </div>
+            <div class="form__field">
+                <input type="text" placeholder="nombres" name="nombres" id="nombres" value="">
+            </div>
+            <div class="form__field">
+                <input type="text" placeholder="apellidos" id="apellidos" name="apellidos" value="">
+            </div>
+            <div class="form__field">
+                <input type="text" placeholder="cedula" id="cedula" name="cedula" value="">
+            </div>
+            <div class="form__field">
+                <input type="date" placeholder="" name="fechaNacimiento"  id="fecha" class="fecha">
+            </div>
+            <div class="form__field">
+                <label for="imagen">Imagen de Perfil:</label>
+                <input type="file" name="imagen" id="imagen" size="20">
+            </div>
+
+            <div class="form__field">
+                <input type="password" placeholder="password" id="password" name="password">
+            </div>
+            <div class="form__field">
+                <input type="password" placeholder="repeat password" id="rpassword" name="rpassword" onkeyup="validarContrasena()">
+            </div>
         </div>
-        <div class="textbox" id="cajaN">
-            <i class="icon-user"></i>
-            <input type="text" placeholder="nombres" id="nombres" name="nombres" value="">
-        </div>
-        <div class="textbox" id="cajaL">
-            <i class="icon-user"></i>
-            <input type="text" placeholder="apellidos" id="apellidos" name="apellidos" value="">
-        </div>
-        <div class="textbox" id="cajaD">
-            <i class="icon-key"></i>
-            <input type="text" placeholder="cedula" id="cedula" name="cedula" value="">
-        </div>
-        <div class="textbox" id="cajaF">
-            <i class="icon-user"></i>
-            <input type="date" placeholder="" name="fechaNacimiento"  id="fecha" class="fecha">
-        </div>
-        <div class="textbox" id="cajaI">
-            <label for="imagen">Imagen de Perfil:</label>
-            <input type="file" name="imagen" id="imagen" size="20">
-        </div>
-        <div class="textbox" id="cajaP">
-            <i class="icon-key"></i>
-            <input type="password" placeholder="password" id="password" name="password">
-        </div>
-        <div class="textbox" id="cajaR">
-            <i class="icon-key"></i>
-            <input type="password" placeholder="repeat password" id="rpassword" name="rpassword" onkeyup="validarContrasena()">
-        </div>
-        <input class="btn" type="submit" name="Login" value="Sign Up">
+        <footer class="login_ingresar">
+            <input type="submit" value="Registrarte">
+    
+            <p><span class="icon icon--info">?</span><a class="link" href="login.html">Iniciar Sesion</a></p>
+          </footer>
     </form>
 </body>
 </html>

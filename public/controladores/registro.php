@@ -46,6 +46,7 @@
             
         if($conn->query($sql) === TRUE) {
             echo "<p>Se ha creado los datos personales correctamemte!!!</p>";
+            echo "<a href='../vista/login.html'>Iniciar Sesion</a>";
         } else {
             if($conn->errno == 1062){
                 }else{
