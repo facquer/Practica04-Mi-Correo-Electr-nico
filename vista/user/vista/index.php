@@ -12,7 +12,7 @@
     <title>Perfil</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="  ">
-    <link rel="stylesheet" href="css/Prueba.css">
+    <link rel="stylesheet" href="css/stylesGeneral.css">
     <script type="text/javascript" src="../controladores/ajax.js"></script>
 </head>
 <body>
@@ -61,13 +61,15 @@
             </form>
         <br>
         <div id="informacion">
-            <table>
-            <tr id="cabecera">
-                <th>Fecha del Mensaje</th>
-                <th>Remitente</th>
-                <th>Asunto</th>
-                <th>Opcion</th>
-            </tr>
+            <table id="estilo">
+            <thead>
+                <tr>
+                    <th>Fecha del Mensaje</th>
+                    <th>Remitente</th>
+                    <th>Asunto</th>
+                    <th>Opcion</th>
+                </tr>
+            </thead>
             <?php
                 $codigo = $_GET['codigo'];
 

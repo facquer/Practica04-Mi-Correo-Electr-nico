@@ -12,13 +12,15 @@
     <title>Buscar</title>
 </head>
 <body>
-  <table>
+  <table id="estilo">
+        <thead>
         <tr id="cabecera">
              <th>Fecha del Mensaje</th>
              <th>Remitente</th>
              <th>Asunto</th>
              <th>Opcion</th>
         </tr>
+</thead>
        <?php
             include '../../../config/conexion.php';
 

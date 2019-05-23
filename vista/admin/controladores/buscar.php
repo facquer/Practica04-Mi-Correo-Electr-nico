@@ -44,7 +44,7 @@
                                 echo " <td>" . $row['usu_correo'] ."</td>";
                                 echo " <td>" . $row['cor_usu_destino'] ."</td>";
                                 echo " <td>" . $row['cor_asunto'] . "</td>";
-                                echo " <td>" . "<a href=../controladores/leer_mensaje.php?id=".$row["cor_id"].">Eliminar"."</a>"."</td>";
+                                echo " <td>" . "<a href=../controladores/leer_mensaje.php?id=".$row["cor_codigo"].">Eliminar"."</a>"."</td>";
                              echo "</tr>";
                          }  
 
