@@ -11,8 +11,7 @@
     <meta charset="UTF-8">
     <title>Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/styles_menu.css">
+    <link rel="stylesheet" href="css/stylesGeneral.css">
     <script type="text/javascript" src="../../user/controladores/ajax.js"></script>
 </head>
 <body>
@@ -33,34 +32,35 @@
     $codigo = $_GET['codigo'];
    ?>
    <header class="header">
-       <div class="container logo-nav-container">
-           <div class="izquierdo">
-               <img src="images/logo.png" alt="">
-               <h4 id="titulo">Correo</h4>    
-           </div>
-           <span class="menu-icon">Ver Menu</span>
-           <nav class="navegacion">
-              <ul class="show">
-                  <li><a href="#">Mensajes</a></li>
+       <div class="header header-wrap-one">
+           <div class="container cf">
+           <h1 class="logo"><a href="#">CORREO</a></h1>
+           <div class="menu-toggle">Menu</div>
+           <div class="navigation">
+              <ul>
+              <li><a href="#">Mensajes</a></li>
                   <?php
                     echo "<li>"."<a href=usuarios.php?id=".$codigo.">Usuarios</a></li>";
                     echo "<li>"."<a href=perfil.php?idusu=".$codigo.">Mi Cuenta</a></li>";
                   ?>
                   
                   <li><a href="../controladores/cerrar_sesion.php">Cerrar Sesion</a></li>
-              </ul> 
-           </nav>
-       </div>
+                </ul>
+            </div>
+
    </header>
-   <main class="main">
+   <main class="align">
     <section class="mail">
+    <h1>Inicio</h1><br>
             <form action="" class="busqueda">
                 <input type="text"  id="remite" name="remitente" value="<?php echo $codigo?>" hidden="hidden">
                 <input type="text" name="correo" placeholder="buscar por remitente" id="correo" value="" onkeyup="buscarPorCorreo()">
             </form>
         <br>
         <div id="informacion">
-            <table>
+            
+            <table id="estilo">
+            <thead>
             <tr id="cabecera">
                 <th>Fecha del Mensaje</th>
                 <th>Remitente</th>
@@ -68,6 +68,7 @@
                 <th>Asunto</th>
                 <th>Eliminar</th>
             </tr>
+    </thead>
             <?php
                 $codigo = $_GET['codigo'];
                 $sql ="SELECT *

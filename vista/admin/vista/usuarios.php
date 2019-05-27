@@ -11,8 +11,8 @@
     <meta charset="UTF-8">
     <title>Usuarios</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="  ">
-    <link rel="stylesheet" href=" ">
+    <link rel="stylesheet" href="css/stylesGeneral.css">
+    <link rel="stylesheet" href="css/stylesLogin.css">
     <script type="text/javascript" src="../controladores/ajax.js"></script>
 </head>
 <body>
@@ -33,15 +33,13 @@
      $codigo = $_GET['id'];
    ?>
    <header class="header">
-       <div class="container logo-nav-container">
-           <div class="izquierdo">
-               <img src="images/logo.png" alt="">
-               <h4 id="titulo">Correo</h4>    
-           </div>
-           <span class="menu-icon">Ver Menu</span>
-           <nav class="navegacion">
-              <ul class="show">
-                  <?php
+       <div class="header header-wrap-one">
+           <div class="container cf">
+           <h1 class="logo"><a href="#">CORREO</a></h1>
+           <div class="menu-toggle">Menu</div>
+           <div class="navigation">
+              <ul>
+              <?php
                     echo "<li>"."<a href=index.php?codigo=".$codigo.">Mensajes</a></li>";
                   ?>
                   <li><a href="#">Usuarios</a></li>
@@ -50,27 +48,30 @@
                   ?>
                   
                   <li><a href="../controladores/cerrar_sesion.php">Cerrar Sesion</a></li>
-              </ul> 
-           </nav>
-       </div>
+                </ul>
+            </div>
+
    </header>
-   <main class="main">
+   <main class="align">
     <section class="mail">
+    <h1>Usuarios</h1><br>
             <form action="" class="busqueda">
                 <input type="text"  id="remite" name="remitente" value="<?php echo $codigo?>" hidden="hidden">
                 <input type="text" name="correo" placeholder="buscar por correo" id="correo" value="" onkeyup="buscarPorUsuario()">
             </form>
         <br>
         <div id="informacion">
-            <table>
+            <table id="estilo">
             <tr id="cabecera">
-                <th>Nombres</th>
-                <th>Apellidos</th>
-                <th>Fecha de Nacimiento</th>
-                <th>Correo</th>
-                <th>Datos</th>
-                <th>Cambiar</th>
-                <th>Eliminar</th>
+                <thead>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Correo</th>
+                    <th>Datos</th>
+                    <th>Cambiar</th>
+                    <th>Eliminar</th>
+                </thead>
             </tr>
             <?php
                 $codigo = $_GET['id'];

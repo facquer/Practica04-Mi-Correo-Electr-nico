@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Mi Perfil</title>
-    <link rel="stylesheet" href=" ">
-    <link rel="stylesheet" href=" ">
+    <link rel="stylesheet" href="css/stylesGeneral.css">
+    <link rel="stylesheet" href="css/stylesLogin.css">
 </head>
 <body>
     <?php
@@ -20,16 +20,14 @@
         $row = $result->fetch_assoc();
     
     ?>
-    <header class="header">
-       <div class="container logo-nav-container">
-           <div class="izquierdo">
-               <img src="images/logo.png" alt="">
-               <h4 id="titulo">Correo</h4>    
-           </div>
-           <span class="menu-icon">Ver Menu</span>
-           <nav class="navegacion">
-              <ul class="show">
-                  <?php
+   <header class="header">
+       <div class="header header-wrap-one">
+           <div class="container cf">
+           <h1 class="logo"><a href="#">CORREO</a></h1>
+           <div class="menu-toggle">Menu</div>
+           <div class="navigation">
+              <ul>
+              <?php
                     echo "<li>"."<a href=index.php?codigo=".$codigo.">Mensajes</a></li>";
                     echo "<li>"."<a href=usuarios.php?id=".$codigoC.">Usuarios</a></li>";
                   ?>
@@ -38,38 +36,48 @@
                   ?>
                   
                   <li><a href="../controladores/cerrar_sesion.php">Cerrar Sesion</a></li>
-              </ul> 
-           </nav>
-       </div>
+                </ul>
+            </div>
+
    </header>
-     <form action="../controladores/update_perfil.php" method="post" class="perfil" enctype="multipart/form-data">
-       <h1>Mi Perfil</h1>
-       <input type="text" name="codigo" value="<?php echo $codigo?>" hidden="hidden">
-       <div class="textbox" id="textboxImg">
-         <?php
-            echo "<img class='foto' src='data:".$row['usu_img_extencion']."; base64,".base64_encode($row['usu_imagen'])."'>";
-         ?>
-         
-         <input type='file' name='imagenUpdate' id='imagen' size='20'>
+   <form action="../controladores/update_perfil.php" method="post" class="form login" enctype="multipart/form-data">
+        <header class="login_cabezera">
+            <h3 class="login_titulo">Mi Cuenta</h3>
+        </header>
+        <div class="login_centro">
+            <input type="text" name="codigo" value="<?php echo $codigo?>" hidden="hidden">
+            <div class="form__field">
+            <?php
+                echo "<img class='foto' src='data:".$row['usu_img_extencion']."; base64,".base64_encode($row['usu_imagen'])."'>";
+            ?>
+            
+            <input type='file' name='imagenUpdate' id='imagen' size='20'>
+            </div>
+            <div class="form__field">
+            <label for="nombres">Nombres</label>
+            <input type="text" name="nombres" value="<?php echo $row['usu_nombres']?>">
+            </div>
+            <div class="form__field">
+            <label for="apellido">Apellidos</label>
+            <input type="text" name="apellidos" value="<?php echo $row['usu_apellidos']?>">
+            </div>
+            <div class="form__field">
+            <label for="cedula">Cedula</label>
+            <input type="text" name="cedula" value="<?php echo $row['usu_cedula']?>">
+            </div>
+            <div class="form__field">
+            <label for="fechaNacimiento">Nacimiento</label>
+            <input type="text" name="fechaNacimiento" value="<?php echo $row['usu_fecha_nac']?>">
+            </div>
+            <div class="form__field">
+            <label for="correo">Correo</label>
+            <input type="text" name="correo" value="<?php echo $row['usu_correo']?>">
+            </div>
         </div>
-        <div class="textbox">
-        
-         <input type="text" name="nombres" value="<?php echo $row['usu_nombres']?>">
-         <label for="nombres">Nombres</label>
-        </div>
-        <div class="textbox">
-         <input type="text" name="apellidos" value="<?php echo $row['usu_apellidos']?>">
-         <label for="apellido">Apellidos</label>
-        </div>
-        <div class="textbox">
-         <input type="text" name="fechaNacimiento" value="<?php echo $row['usu_fecha_nac']?>">
-         <label for="fechaNacimiento">Nacimiento</label>
-        </div>
-        <div class="textbox">
-         <input type="text" name="correo" value="<?php echo $row['usu_correo']?>">
-         <label for="correo">Correo</label>
-        </div>
-        <input class="btn" type="submit" name="Login" value="GUARDAR">
+        <footer class="login_ingresar">
+
+            <input class="btn" type="submit" name="Login" value="GUARDAR">
+        </footer>
     </form>
 </body>
 </html>
