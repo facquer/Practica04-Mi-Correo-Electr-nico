@@ -1,0 +1,9 @@
+# Practica04-Mi-Correo-Electr-nico
+<strong>•DIAGRAMA E-R</strong><br>
+![Imagen Git](capturas/diagrama.png)<br>
+<strong>•PROGRAMA FUNCIONANDO</strong><br>
+![Imagen Git](capturas/inicio.png)<br>
+![Imagen Git](capturas/registro.png)<br>
+![Imagen Git](capturas/mensajes.png)<br>
+![Imagen Git](capturas/nuevo.png)<br>
+![Imagen Git](capturas/cuenta.png)<br>
