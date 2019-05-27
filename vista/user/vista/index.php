@@ -11,7 +11,6 @@
     <meta charset="UTF-8">
     <title>Perfil</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="  ">
     <link rel="stylesheet" href="css/stylesGeneral.css">
     <script type="text/javascript" src="../controladores/ajax.js"></script>
 </head>

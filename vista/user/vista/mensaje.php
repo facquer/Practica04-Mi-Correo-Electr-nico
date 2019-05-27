@@ -10,8 +10,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Nuevo mensaje</title>
-    <link rel="stylesheet" href="  ">
-    <link rel="stylesheet" href="  ">
+    <link rel="stylesheet" href="css/stylesGeneral.css">
+    <link rel="stylesheet" href="css/stylesLogin.css">
 </head>
 <body>
     <?php
@@ -38,16 +38,14 @@
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
     ?>
-    <header class="header">
-       <div class="container logo-nav-container">
-           <div class="izquierdo">
-               <img src="images/logo.png" alt="">
-               <h4 id="titulo">Correo</h4>    
-           </div>
-           <span class="menu-icon">Ver Menu</span>
-           <nav class="navegacion">
-              <ul class="show">
-                  <?php
+   <header class="header">
+       <div class="header header-wrap-one">
+           <div class="container cf">
+           <h1 class="logo"><a href="#">CORREO</a></h1>
+           <div class="menu-toggle">Menu</div>
+           <div class="navigation">
+              <ul>
+              <?php
                     echo "<li>"."<a href=index.php?codigo=".$codigo.">Inicio</a></li>";
                   ?>
                   <li><a href="#">Nuevo Mensaje</a></li>
@@ -56,17 +54,26 @@
                     echo "<li>"."<a href=perfil.php?id=".$codigo.">Mi Cuenta</a></li>";
                   ?>
                   <li><a href="../controladores/cerrar_sesion.php">Cerrar Sesion</a></li>
-              </ul> 
-           </nav>
-       </div>
+                </ul>
+            </div>
+
    </header>
-   <form action="../controladores/enviar_mensaje.php" method="post">
-       <h2 id="titulo_contactos">MENSAJE</h2>
-        <input type="text"  id="remite" name="remitente" value="<?php echo $codigo?>" hidden="hidden">
-        <input type="text" name="destino" placeholder="Ingrese a que correo desea enviar" value='@ups.edu.ec'>
-        <input type="text" name="asunto" placeholder="Asunto del Mensaje">
-        <textarea name="mensaje"  cols="30" rows="10" placeholder="Escriba aqui su mensaje"></textarea>
-        <input type="submit" value="ENVIAR" id="boton">
+   <section class="align">
+   <form class="form login" action="../controladores/enviar_mensaje.php" method="post">
+        <header class="login_cabezera">
+            <h3 class="login_titulo">Mensaje</h3>
+        </header>
+        <div class="login_centro">
+            <input type="text"  id="remite" name="remitente" value="<?php echo $codigo?>" hidden="hidden">
+            <input type="text" name="destino" placeholder="Ingrese a que correo desea enviar" value='@ups.edu.ec'>
+            <input type="text" name="asunto" placeholder="Asunto del Mensaje">
+            <textarea name="mensaje"  cols="30" rows="10" placeholder="Escriba aqui su mensaje"></textarea>
+        </div>
+        <footer class="login_ingresar">
+            <input type="submit" value="ENVIAR" id="boton">
+        </footer>
+       
    </form>
+    </section>
 </body>
 </html>

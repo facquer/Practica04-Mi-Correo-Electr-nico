@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Cambio de Contrseña</title>
-    <link rel="stylesheet" href=" ">
-    <link rel="stylesheet" href="css/Prueba.css">
+    <link rel="stylesheet" href="css/stylesGeneral.css">
+    <link rel="stylesheet" href="css/stylesLogin.css">
     <script type="text/javascript" src="../../../public/controladores/js/validar.js"></script>
 </head>
 <body>
@@ -20,38 +20,42 @@
         $row = $result->fetch_assoc();
     
     ?>
-    <header class="header">
-       <div class="container logo-nav-container">
-           <div class="izquierdo">
-               <img src=" " alt="">
-               <h4 id="titulo">Correo</h4>    
-           </div>
-           <span class="menu-icon">Ver Menu</span>
-           <nav class="navegacion">
-              <ul class="show">
-                  <?php
+   <header class="header">
+       <div class="header header-wrap-one">
+           <div class="container cf">
+           <h1 class="logo"><a href="#">CORREO</a></h1>
+           <div class="menu-toggle">Menu</div>
+           <div class="navigation">
+              <ul>
+              <?php
                     echo "<li>"."<a href=index.php?codigo=".$codigo.">Inicio</a></li>";
                     echo "<li>"."<a href=mensaje.php?id=".$codigo.">Nuevo Mensaje</a></li>";
                     echo "<li>"."<a href=enviados.php?id=".$codigo.">Mensajes Enviados</a></li>";
                     echo "<li>"."<a href=perfil.php?id=".$codigo.">Mi Cuenta</a></li>";
                   ?>
                   <li><a href="../controladores/cerrar_sesion.php">Cerrar Sesion</a></li>
-              </ul> 
-           </nav>
-       </div>
+                </ul>
+            </div>
+
    </header>
-     <form action="../controladores/update_contrasena.php" method="post" class="perfil">
-       <h1>Cambiar</h1>
-       <input type="text" name="codigo" value="<?php echo $codigo?>" hidden="hidden">
-        <div class="textbox" id="cajaP">
-         <input type="password" name="password" id="password" value="" placeholder="Escribir nueva contraseña">
-         <label for="nombres">Contraseña nueva</label>
+     <form action="../controladores/update_contrasena.php" method="post" class="form login">
+        <header class="login_cabezera">
+            <h3 class="login_titulo">Cambiar contraseña</h3>
+        </header>
+        <div class="login_centro">
+        <input type="text" name="codigo" value="<?php echo $codigo?>" hidden="hidden">
+            <div class="form__field">
+            <label for="nombres">Contraseña nueva</label>
+            <input type="password" name="password" id="password" value="" placeholder="Escribir nueva contraseña">
+            </div>
+            <div class="form__field">
+            <label for="apellido">Repita</label>
+            <input type="password" name="rpassword" id="rpassword" value="" placeholder="repetir nueva contraseña" onkeyup="validarContrasena()">
+            </div>
         </div>
-        <div class="textbox" id="cajaR">
-         <input type="password" name="rpassword" id="rpassword" value="" placeholder="repetir nueva contraseña" onkeyup="validarContrasena()">
-         <label for="apellido">Repita</label>
-        </div>
-        <input class="btn" type="submit" name="Login" value="GUARDAR">
+        <footer class="login_ingresar">
+            <input class="btn" type="submit" name="Login" value="GUARDAR">
+        </footer>
     </form>
 </body>
 </html>

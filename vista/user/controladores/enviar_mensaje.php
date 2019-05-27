@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <title></title>
     <style type="text/css">
-        body{
-            background-image: url();
+        body{          
+            background-image: url('../images/fondo.png');
             background-size: cover;
+            background-attachment: fixed;
         }
         
         div{
-            background: rgba(0,0,0,0.8);
+            background: black;
             font-size: 25px;
             display: inline-block;
-            font-family: sans-serif;
             text-align: center;
             margin-left: 50vh;
             margin-top: 50vh;
@@ -22,17 +22,16 @@
         }
         
         .error{
-            color: crimson;
+            color: red;
         }
         
         .exito{
-            color: greenyellow;
+            color: green;
         }
         
         div a{
             text-decoration: none;
             color: white;
-            font-family: sans-serif;
             border-style: solid;
             border-color: white;
             border-radius: 15px;
