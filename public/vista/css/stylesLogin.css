@@ -104,6 +104,7 @@ input[type='submit'] {
 }
 
 .form input[type='email'],
+.form input[type='correo'],
 .form input[type='text'],
 .form input[type='date'],
 .form input[type='file'],
@@ -155,6 +156,7 @@ input[type='submit'] {
 }
 
 .login input[type='email'],
+.login input[type='correo'],
 .login input[type='text'],
 .login input[type='date'],
 .login input[type='file'],
@@ -164,6 +166,11 @@ input[type='submit'] {
 }
 
 .login input[type='email'] {
+  border-top-left-radius: var(--loginInputBorderRadius);
+  border-top-right-radius: var(--loginInputBorderRadius);
+}
+
+.login input[type='correo'] {
   border-top-left-radius: var(--loginInputBorderRadius);
   border-top-right-radius: var(--loginInputBorderRadius);
 }

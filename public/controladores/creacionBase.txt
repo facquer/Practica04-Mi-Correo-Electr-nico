@@ -9,7 +9,7 @@ CREATE TABLE USUARIOS (
     usu_correo varchar(20) NOT NULL,
     usu_password varchar(255) NOT NULL,
     usu_fecha_nac date NOT NULL,
-    usu_imagen longblob DEFAULT 'NULL',
+    usu_imagen longblob DEFAULT NULL,
     usu_img_extencion varchar(50) DEFAULT 'NULL',
     usu_eliminado varchar(1) NOT NULL DEFAULT 'N',
     usu_fecha_creacion timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -17,7 +17,7 @@ CREATE TABLE USUARIOS (
     usu_rol_id int NOT NULL,
     PRIMARY KEY (usu_codigo),
     UNIQUE KEY usu_cedula (usu_cedula),
-    FOREIGN KEY (usu_rol_id) REFERENCES roles(rol_id)
+    FOREIGN KEY (usu_rol_id) REFERENCES roles(rol_codigo)
     ) ENGINE=INNODB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 
@@ -40,9 +40,9 @@ CREATE TABLE CORREOS(
     cor_usu_elimina int,
     cor_estado_elimina varchar(1) DEFAULT 'N',
     cor_usu_fec_elimina timestamp DEFAULT CURRENT_TIMESTAMP,
-    cor_id_usu_destino varchar(50) NOT NULL,
+    cor_usu_destino varchar(50) NOT NULL,
     cor_id_usu_remitente int NOT NULL,
-    FOREIGN KEY (cor_id_usu_remitente) REFERENCES usuario(usu_codigo)
+    FOREIGN KEY (cor_id_usu_remitente) REFERENCES usuarios(usu_codigo)
     );
 
 INSERT INTO ROLES VALUES (1,'Admin','Administrador','N','S','N','S');
